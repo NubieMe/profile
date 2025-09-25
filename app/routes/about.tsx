@@ -9,6 +9,21 @@ export function meta() {
 }
 
 export default function About() {
+  const onDownloadClick = async () => {
+    try {
+      const raw = await fetch('CV-Fahmi.pdf')
+      const blob = await raw.blob()
+      const fileURL = window.URL.createObjectURL(blob)
+
+      const a = document.createElement("a")
+      a.href = fileURL
+      a.download = "CV-Fahmi.pdf"
+      a.click()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen px-6 text-center animate-fade-in transform -translate-y-16 md:-translate-y-24"
@@ -50,7 +65,7 @@ export default function About() {
       <button
         className="mt-5 bg-blue-800 hover:bg-blue-700 px-5 py-2 rounded cursor-pointer"
         style={{ letterSpacing: "0.2rem" }}
-        onClick={() => window.open("/CV_Fahmi.pdf", "_blank")}
+        onClick={onDownloadClick}
       >
         Download CV
       </button>
