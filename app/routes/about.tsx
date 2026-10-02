@@ -11,13 +11,13 @@ export function meta() {
 export default function About() {
   const onDownloadClick = async () => {
     try {
-      const raw = await fetch('CV-Fahmi.pdf')
+      const raw = await fetch('ATS-Fahmi.pdf')
       const blob = await raw.blob()
       const fileURL = window.URL.createObjectURL(blob)
 
       const a = document.createElement("a")
       a.href = fileURL
-      a.download = "CV-Fahmi.pdf"
+      a.download = "ATS-Fahmi.pdf"
       a.click()
     } catch (error) {
       console.error(error)

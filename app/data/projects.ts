@@ -56,4 +56,14 @@ export const projects: Project[] = [
     url: "",
     github: "",
   },
+  {
+    title: "Arana's Company Profile",
+    description: "Arana's Company Profile is a website that showcases the company's services, portfolio, and contact information. It is designed to provide a professional online presence for the company.",
+    screenshot: "/project/arana.png",
+    tech: [
+      { name: "React", src: "/logo/react.png" }
+    ],
+    url: "https://arananco.com",
+    github: "",
+  }
 ]
